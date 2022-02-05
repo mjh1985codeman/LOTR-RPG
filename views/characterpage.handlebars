@@ -33,6 +33,23 @@
                 </div>
             </div>
         </form>
+        <form class="exist-char-form">
+
+            <div class="medium-6 cell">
+                <label class="font fs-5" for="char-type">Choose Existing Character:</label>
+
+                <select id="existing-char" name="existing-char">
+                    {{#each characters}}
+                    <option value={{char_name}}>{{char_name}} the {{char_type}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="cell">
+                <button id="existing-char-button" type="submit" class="btn">
+                    Use Character
+                </button>
+            </div>
+        </form>
     </div>
 
     <div class="container">
