@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
-  secret: "Super secret secret",
+  secret: process.env.SESSION_SECRET || "Super secret secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -42,5 +42,5 @@ app.use(controllers);
 //index.js file in the Models folder) set this to force: true then run once to
 //recreate the tables/associations, then set it back to false.
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () => console.log("Now listening on port " + PORT));
 });

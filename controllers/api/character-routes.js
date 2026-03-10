@@ -76,7 +76,6 @@ router.post("/", withAuth, (req, res) => {
     .then((dbCharacterData) => {
       req.session.current_char = dbCharacterData.id;
       res.json(dbCharacterData);
-      console.log(current_char);
     })
     .catch((err) => {
       console.log(err);

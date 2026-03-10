@@ -1,22 +1,17 @@
 <ul class="nav justify-content-center p-5">
     <button id="playagain" class="btn line-item fs-3">Play Again!</button>
     <button id="logout" class="btn line-item fs-3">Logout</button>
-
 </ul>
 
 <div class="container opacity-75">
-    <h2 class="card p-2">Top 10 Scores!
-        <h2 />
-        <ol class="list-group list-group-numbered">
-            {{#each characters}} {{!-- loops through the characters variable which is the character model data. (see
-            scorepage-routes.js) --}}
-            {{!-- uses dot notation to get the value needed from the model(s) in our database. --}}
-            <li class="list-group-item">{{ user.username }}'s score as {{ char_name }} the {{char_type}} : {{
-                char_health }}</p>
-                {{/each}}
-        </ol>
-
+    <h2 class="card p-2">Top 10 Scores!</h2>
+    <ol class="list-group list-group-numbered">
+        {{#each characters}}
+        <li class="list-group-item">
+            {{ user.username }}'s score as {{ char_name }} the {{ char_type }}: {{ char_health }}
+        </li>
+        {{/each}}
+    </ol>
 </div>
-
 
 <script src="/javascript/scores.js"></script>

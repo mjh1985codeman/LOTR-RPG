@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("homepage");
+  res.render("homepage", {loggedIn: false});
 });
 
 module.exports = router;
